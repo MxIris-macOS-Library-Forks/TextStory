@@ -4,13 +4,18 @@ import PackageDescription
 
 let package = Package(
     name: "TextStory",
-    platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13)],
+	platforms: [
+		.macOS(.v10_15),
+		.macCatalyst(.v13),
+		.iOS(.v13),
+		.tvOS(.v13),
+	],
     products: [
         .library(name: "TextStory", targets: ["TextStory"]),
         .library(name: "TextStoryTesting", targets: ["TextStoryTesting"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/ChimeHQ/Rearrange", from: "1.5.0"),
+        .package(url: "https://github.com/ChimeHQ/Rearrange", from: "2.0.0"),
     ],
     targets: [
         .target(name: "Internal", publicHeadersPath: "."),
